@@ -63,7 +63,7 @@ $(document).ready(function(){
 //função para buscar item no carrinho
 function buscaItem (carrinho, id) {
 	c = 0
-	$.each ( carrinho, function(){
+	$.each(carrinho, function(key, val){
 		if (val.id == id) c++
 	})
 	console.log("itens: " + c)
@@ -99,7 +99,56 @@ function mostraCarrinho()
 					<td>Excluir</td>
 				</tr>
 			</thead>
-			<tbody>  </tbody>
-		</table>`);
+			<tbody></tbody>
+		</table>
+		
+		<p>
+			<button type='button' class='btn red darken-4' onclick="limpar()">
+				limpar
+			</button>
+
+		`);
+
+		//mostrar a linha dos produtos no tbody
+		$.each(carrinho, function (key, val){
+			$("tbody").append(`<tr id='linha${key}'>
+				<td>
+					<img src='${val.foto}' width='100px' >
+				</td>
+				<td>${val.nome}</td>
+				<td>${val.valor}</td>
+				<td>
+					<button type="button" class="btn red darken-4" onclick="remover(${key})">
+						<i class="material-icons">remove_shopping_cart</i>
+					</button>
+				</td>
+				</tr>`)
+		})
+	}
+}
+
+//função remove item do carrinho
+function remover(id)
+{
+	if (confirm ("Deseja mesmo excluir?"))
+	{
+		carrinho = JSON.parse(localStorage.getItem("carrinho"))
+		//splice apaga o item dentro do carrinho (array)
+		carrinho.splice(id,1)
+		carrinho = JSON.stringify(carrinho)
+		localStorage.setItem("carrinho", carrinho)
+		mostraCarrinho()
+		//$("#linha"+id).hide("slow")
+	}
+}
+
+//função para limpar o carrinho
+function limpar()
+{
+	if(confirm("Realmente limpar o carrinho?"))
+	{
+		//limpa a variavel do cache
+		localStorage.clear("carrinho")
+		mostraCarrinho()
 	}
 }

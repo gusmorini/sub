@@ -49,6 +49,11 @@
     </div>
   </nav>
   <ul class="sidenav" id="mobile-demo">
+				<li>
+        	<a href="carrinho" class="btn red darken-4">
+        		<i class="material-icons">shopping_cart</i>
+        	</a>
+        </li>
   </ul>
 
   <main class="container">
