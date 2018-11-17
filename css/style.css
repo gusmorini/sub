@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+body, html {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	font-family: Lato, Verdana, Tahoma;
+	background: #f1f1f1;
+}
+
+.load {
+	background: #fff;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	box-sizing: border-box;
+	padding: 20% 0%;
+	text-align: center;
+	z-index: 100;
+}
+
+.img {
+	height: 50px;
+	margin: 5px 0 5px 25px;
+}
+
+.thumb {
+	width: 90%;
+}
+
+.banner {
+	margin-top: 20px;
+}
+
+.banner img {
+	width: 100%;
+}
+
+.card {
+	padding: 10px;
+}
+
+.card .produto {
+	height: 120px;
+}
+
+.card .valor {
+	color: #F00;
+	font-weight: bold;
+}
+
+.produtos .valor {
+	font-size: 2em;
+	color: #F00;
+	font-weight: bold;
+}
+
+#nav-footer li a {
+	color: #fff;
+}
