@@ -1,0 +1,15 @@
+{
+  "background_color": "blue",
+  "description": "SubSub Marino - Sua Loja de Eletrônicos de Tapejara",
+  "display": "fullscreen",
+  "icons": [
+    {
+      "src": "imagens/icon.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    }
+  ],
+  "name": "SubSub-marino E-commerce",
+  "short_name": "SubSub-marino",
+  "start_url": "index.php"
+}
